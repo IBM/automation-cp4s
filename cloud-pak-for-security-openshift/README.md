@@ -14,11 +14,9 @@ There are three different options for how to configure and run the automation:
 
 In this mode, you will be prompted interactively for the variables required to run the automation.
 
-1. From a command line terminal, run `launch.sh`.  This will start a container-zed shell that has all of the dependencies preinstalled.
-2. `cd` into the `cloud-pak-for-security-openshift` directory.
-3. Run the `apply.sh` script
-4. At each prompt, provide a value for the variable.
-5. Once all the variables are collected, you will be asked to apply the automation. Enter `y` to continue or `n` to stop. Either way, the values provided have been collected and written to two sets of files so that next time you can skip the prompts.
+1. Run the `apply.sh` script
+2. At each prompt, provide a value for the variable.
+3. Once all the variables are collected, you will be asked to apply the automation. Enter `y` to continue or `n` to stop. Either way, the values provided have been collected and written to two sets of files so that next time you can skip the prompts.
 
 The `apply.sh` script will generate credentials.yaml and variables.yaml input files that can be used
 for future deployments as well as generating the credentials.auto.tfvars and terraform.tfvars files

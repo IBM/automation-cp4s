@@ -1,0 +1,7 @@
+variables:
+  - name: cluster_ingress_subdomain
+    value: a
+  - name: config_banner_text
+    value: c
+  - name: gitops_repo_repo
+    value: e
