@@ -77,6 +77,7 @@ already be in .gitignore.
 | gitops_repo_project | The project that will be used for the git repo. (Primarily used for Azure DevOps repos) |  |  |
 | gitops_repo_token | The personal access token used to access the repository | true |  |
 | gitops_repo_username | The username of the user with access to the repository |  |  |
+| gitops-cp4s_roks_auth | Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be enabled |  | true |
 
 ## Troubleshooting
 

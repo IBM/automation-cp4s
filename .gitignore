@@ -4,3 +4,9 @@ credentials.yaml
 credentials.auto.tfvars
 .tmp/
 .terraform/
+*/.terraform/*
+cloud-pak-for-security-openshift/*/terraform/bin/*
+cloud-pak-for-security-openshift/*/terraform/bin2/*
+.terraform.lock.hcl
+clis-debug.log
+cloud-pak-for-security-openshift/*/terraform/output.json

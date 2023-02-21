@@ -82,3 +82,8 @@ spec:
       type: string
       description: The username of the user with access to the repository
       value: ''
+    - name: gitops-cp4s_roks_auth
+      description: >-
+        Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be
+        enabled
+      value: true
