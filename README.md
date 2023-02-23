@@ -1,6 +1,25 @@
 # cloud-pak-for-security-openshift
 
-Automation to deploy IBM Cloud Pak for Security on Top of RedHat OpenShift
+Automation to deploy IBM Cloud Pak for Security on Top of RedHat OpenShift.
+
+## Prerequisites
+
+This automation is expected to deploy into an existing OpenShift cluster.  Be sure to review Cloud Pak for Security [system requirements](https://www.ibm.com/docs/en/cloud-paks/cp-security/1.9?topic=planning-system-requirements) and [storage requirements](https://www.ibm.com/docs/en/cloud-paks/cp-security/1.9?topic=planning-storage-requirements) to ensure you have an adequate cluster configuration.
+
+If you do not have an OpenShift cluster, you can use terraform automation to provision an environment for you:
+- [IBM Cloud](https://github.com/IBM/automation-ibmcloud-infra-openshift)
+- [AWS](https://github.com/IBM/automation-aws-infra-openshift)
+- [Azure](https://github.com/IBM/automation-azure-infra-openshift)
+
+
+## Post Installation Tasks
+
+After completing the terraform automation, the following tasks must be completed manually:
+
+- [Configuring Identity Providers](https://www.ibm.com/docs/en/cloud-paks/cp-security/1.9?topic=postinstallation-configuring-identity-providers)
+- [Logging in as the initial user](https://www.ibm.com/docs/en/cloud-paks/cp-security/1.9?topic=postinstallation-logging-in-cloud-pak-security-as-initial-user)
+- [Installing Orchestration and Automation license](https://www.ibm.com/docs/en/cloud-paks/cp-security/1.9?topic=postinstallation-installing-orchestration-automation-license)
+- If using IBM Cloud Security Advisor, [Configure the IBM Cloud Security Advisor Adapter](https://www.ibm.com/docs/en/cloud-paks/cp-security/1.9?topic=postinstallation-cloud-security-advisor-adapter)
 
 ## Running the automation
 
@@ -82,3 +101,4 @@ already be in .gitignore.
 
 ## Troubleshooting
 
+IF using the `apply.sh` script in the root and using Gitea for the gitops repo (in-cluster), it is common to see an error in between execution of the 200 and 700 layers indicating that the git repo could not be reached.   This is due to a timing issue, where the automation attempts to configure the software gitops repo before Gitea has finished initializing.  If you encounter this error, re-run the `apply.sh` script and it should proceed without any issues.
