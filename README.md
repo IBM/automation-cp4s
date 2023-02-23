@@ -83,7 +83,6 @@ already be in .gitignore.
 | [700-cp4s-multicloud](./700-cp4s-multicloud) | software | Populates a GitOps repository with the components of IBM Cloud Pak for Security | v1.0.2 |
 
 ### Variables
-
 | Name | Description | Sensitive | Default value |
 |------|-------------|-----------|---------------|
 | cluster_ingress_subdomain |  |  |  |
@@ -92,6 +91,7 @@ already be in .gitignore.
 | entitlement_key |  | true |  |
 | gitops_repo_repo | The short name of the repository (i.e. the part after the org/group name) |  |  |
 | gitops-cp4s_admin_user | Short name or email-id of the user to be given administrator privileges in the default account. Mandatory value while creating cp4s-threat-management-instance | true |  |
+| gitops-cp4s_roks_auth | Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be enabled (true|false) |  |  |
 | server_url | The url for the OpenShift api |  |  |
 | gitops_repo_host | The host for the git repository. The git host used can be a GitHub, GitHub Enterprise, Gitlab, Bitbucket, Gitea or Azure DevOps server. If the host is null assumes in-cluster Gitea instance will be used. |  |  |
 | gitops_repo_org | The org/group where the git repository exists/will be provisioned. If the value is left blank then the username org will be used. |  |  |

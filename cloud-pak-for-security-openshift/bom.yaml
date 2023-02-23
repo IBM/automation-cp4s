@@ -51,6 +51,10 @@ spec:
         in the default account. Mandatory value while creating
         cp4s-threat-management-instance
       sensitive: true
+    - name: gitops-cp4s_roks_auth
+      description: >-
+        Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be
+        enabled (true|false)
     - name: server_url
       type: string
       description: The url for the OpenShift api
@@ -82,8 +86,3 @@ spec:
       type: string
       description: The username of the user with access to the repository
       value: ''
-    - name: gitops-cp4s_roks_auth
-      description: >-
-        Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be
-        enabled
-      value: true

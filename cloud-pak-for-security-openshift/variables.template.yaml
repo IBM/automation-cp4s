@@ -6,6 +6,10 @@ variables:
   - name: gitops_repo_repo
     type: string
     description: The short name of the repository (i.e. the part after the org/group name)
+  - name: gitops-cp4s_roks_auth
+    description: >-
+      Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be
+      enabled (true|false)
   - name: server_url
     type: string
     description: The url for the OpenShift api
@@ -32,8 +36,3 @@ variables:
     type: string
     description: The username of the user with access to the repository
     value: ''
-  - name: gitops-cp4s_roks_auth
-    description: >-
-      Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be
-      enabled
-    value: true

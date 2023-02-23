@@ -7,6 +7,9 @@
 ## gitops_repo_repo: The short name of the repository (i.e. the part after the org/group name)
 #gitops_repo_repo=""
 
+## gitops-cp4s_roks_auth: Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be enabled (true|false)
+#gitops-cp4s_roks_auth=""
+
 ## server_url: The url for the OpenShift api
 #server_url=""
 
@@ -21,7 +24,4 @@
 
 ## gitops_repo_username: The username of the user with access to the repository
 #gitops_repo_username=""
-
-## gitops-cp4s_roks_auth: Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be enabled
-#gitops-cp4s_roks_auth="true"
 
