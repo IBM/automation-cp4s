@@ -41,6 +41,7 @@ variable "config_banner_text_color" {
 variable "config_banner_text" {
   type = string
   description = "The text that will appear in the top banner in the cluster"
+  default = "Cloud Pak for Security"
 }
 variable "gitops_host" {
   type = string
@@ -60,7 +61,7 @@ variable "gitops_project" {
 variable "gitops_repo" {
   type = string
   description = "The name of the repository in the org on the git server."
-  default = ""
+  default = "gitops-cp4s"
 }
 variable "gitops_username" {
   type = string
@@ -160,6 +161,7 @@ variable "gitops_repo_token" {
 variable "gitops_repo_repo" {
   type = string
   description = "The short name of the repository (i.e. the part after the org/group name)"
+  default = "gitops-cp4s"
 }
 variable "gitops_repo_branch" {
   type = string

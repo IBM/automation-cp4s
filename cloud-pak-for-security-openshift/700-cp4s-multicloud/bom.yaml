@@ -24,7 +24,7 @@ spec:
           scope: global
     - name: gitops-cp4s
       alias: gitops-cp4s
-      version: v1.1.1
+      version: v1.1.2
       dependencies:
         - name: namespace
           ref: cp4s-namespace
@@ -43,7 +43,7 @@ spec:
           scope: global
     - name: gitops-knative-serving
       alias: gitops-knative-serving
-      version: v1.0.0
+      version: v1.0.1
       dependencies:
         - name: namespace
           ref: knative-serving-namespace
@@ -70,7 +70,7 @@ spec:
       version: v1.23.3
     - name: gitops-serverless-operator
       alias: gitops-serverless-operator
-      version: v1.0.0
+      version: v1.0.2
       dependencies:
         - name: namespace
           ref: operator-namespace

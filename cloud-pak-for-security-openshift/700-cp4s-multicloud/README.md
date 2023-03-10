@@ -24,13 +24,13 @@ The following layers are dependencies of this terraform template and must be app
 | Name | Description | Version |
 |------|-------------|---------|
 | [gitops-cp-catalogs](https://github.com/cloud-native-toolkit/terraform-gitops-cp-catalogs) | Module to populate a gitops repository with the resources needed to install the operator catalogs required to install IBM Cloud Paks. | v1.2.7 |
-| [gitops-cp4s](https://github.com/cloud-native-toolkit/terraform-gitops-cp4s) | Module to populate a gitops repo with the resources to provision IBM Cloud Pak for Security | v1.1.1 |
-| [gitops-knative-serving](https://github.com/cloud-native-toolkit/terraform-gitops-knative-serving) | Module to populate a gitops repo with the resources to provision knative-serving | v1.0.0 |
+| [gitops-cp4s](https://github.com/cloud-native-toolkit/terraform-gitops-cp4s) | Module to populate a gitops repo with the resources to provision IBM Cloud Pak for Security | v1.1.2 |
+| [gitops-knative-serving](https://github.com/cloud-native-toolkit/terraform-gitops-knative-serving) | Module to populate a gitops repo with the resources to provision knative-serving | v1.0.1 |
 | [gitops-namespace](https://github.com/cloud-native-toolkit/terraform-gitops-namespace) | Module to configure the provisioning of a namespace in a GitOps repo | v1.15.0 |
 | [gitops-namespace](https://github.com/cloud-native-toolkit/terraform-gitops-namespace) | Module to configure the provisioning of a namespace in a GitOps repo | v1.15.0 |
 | [gitops-namespace](https://github.com/cloud-native-toolkit/terraform-gitops-namespace) | Module to configure the provisioning of a namespace in a GitOps repo | v1.15.0 |
 | [gitops-repo](https://github.com/cloud-native-toolkit/terraform-tools-gitops) | Module to provision and set up a GitOps repository | v1.23.3 |
-| [gitops-serverless-operator](https://github.com/cloud-native-toolkit/terraform-gitops-serverless-operator) | Module to populate a gitops repo with the resources to provision serverless-operator | v1.0.0 |
+| [gitops-serverless-operator](https://github.com/cloud-native-toolkit/terraform-gitops-serverless-operator) | Module to populate a gitops repo with the resources to provision serverless-operator | v1.0.2 |
 | [util-clis](https://github.com/cloud-native-toolkit/terraform-util-clis) | Module to install clis into local bin directory | v1.18.2 |
 
 ### Variables

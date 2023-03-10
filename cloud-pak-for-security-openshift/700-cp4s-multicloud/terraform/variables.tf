@@ -80,7 +80,7 @@ variable "gitops_ca_cert_file" {
 variable "gitops-cp4s_channel" {
   type = string
   description = "The version of channel"
-  default = "v1.9"
+  default = "v1.10"
 }
 variable "rwo_storage_class" {
   type = string
@@ -109,6 +109,11 @@ variable "gitops-cp4s_backup_storage_size" {
 variable "gitops-cp4s_domain" {
   type = string
   description = "The fully qualified domain name (FQDN) created for Cloud Pak for Security. If you don't specify an FQDN, it is generated as cp4s.<cluster_ingress_subdomain>."
+  default = ""
+}
+variable "gitops-cp4s_orchestration_automation_license" {
+  type = string
+  description = "Orchestration & Automation license."
   default = ""
 }
 variable "gitops-knative-serving_replica_count" {

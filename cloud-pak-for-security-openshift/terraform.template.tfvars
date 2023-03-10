@@ -1,11 +1,6 @@
 ## cluster_ingress_subdomain: the value of cluster_ingress_subdomain
 #cluster_ingress_subdomain=""
 
-## config_banner_text: The text that will appear in the top banner in the cluster
-#config_banner_text=""
-
-## gitops_repo_repo: The short name of the repository (i.e. the part after the org/group name)
-#gitops_repo_repo=""
 
 ## gitops-cp4s_roks_auth: Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be enabled (true|false)
 #gitops-cp4s_roks_auth=""

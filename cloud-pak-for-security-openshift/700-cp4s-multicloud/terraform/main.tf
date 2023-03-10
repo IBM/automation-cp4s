@@ -42,7 +42,7 @@ module "gitops-cp-catalogs" {
   server_name = module.gitops_repo.server_name
 }
 module "gitops-cp4s" {
-  source = "github.com/cloud-native-toolkit/terraform-gitops-cp4s?ref=v1.1.1"
+  source = "github.com/cloud-native-toolkit/terraform-gitops-cp4s?ref=v1.1.4"
 
   admin_user = var.gitops-cp4s_admin_user
   backup_storage_class = var.rwo_storage_class
@@ -56,12 +56,13 @@ module "gitops-cp4s" {
   gitops_config = module.gitops_repo.gitops_config
   kubeseal_cert = module.gitops_repo.sealed_secrets_cert
   namespace = module.cp4s-namespace.name
+  orchestration_automation_license = var.gitops-cp4s_orchestration_automation_license
   roks_auth = var.gitops-cp4s_roks_auth
   server_name = module.gitops_repo.server_name
   storage_class = var.rwo_storage_class
 }
 module "gitops-knative-serving" {
-  source = "github.com/cloud-native-toolkit/terraform-gitops-knative-serving?ref=v1.0.0"
+  source = "github.com/cloud-native-toolkit/terraform-gitops-knative-serving?ref=v1.0.1"
 
   git_credentials = module.gitops_repo.git_credentials
   gitops_config = module.gitops_repo.gitops_config
@@ -72,7 +73,7 @@ module "gitops-knative-serving" {
   server_name = module.gitops_repo.server_name
 }
 module "gitops-serverless-operator" {
-  source = "github.com/cloud-native-toolkit/terraform-gitops-serverless-operator?ref=v1.0.0"
+  source = "github.com/cloud-native-toolkit/terraform-gitops-serverless-operator?ref=v1.0.2"
 
   git_credentials = module.gitops_repo.git_credentials
   gitops_config = module.gitops_repo.gitops_config

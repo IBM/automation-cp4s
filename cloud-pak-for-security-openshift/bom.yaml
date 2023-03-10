@@ -34,16 +34,8 @@ spec:
       type: string
       description: Token used for authentication
       sensitive: true
-    - name: config_banner_text
-      type: string
-      description: The text that will appear in the top banner in the cluster
     - name: entitlement_key
       sensitive: true
-    - name: gitops_repo_repo
-      type: string
-      description: >-
-        The short name of the repository (i.e. the part after the org/group
-        name)
     - name: gitops-cp4s_admin_user
       type: string
       description: >-
@@ -51,6 +43,8 @@ spec:
         in the default account. Mandatory value while creating
         cp4s-threat-management-instance
       sensitive: true
+    - name: gitops-cp4s_orchestration_automation_license
+      description: Orchestration & Automation license
     - name: gitops-cp4s_roks_auth
       description: >-
         Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be
