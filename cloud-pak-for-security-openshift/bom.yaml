@@ -44,7 +44,9 @@ spec:
         cp4s-threat-management-instance
       sensitive: true
     - name: gitops-cp4s_orchestration_automation_license
-      description: Orchestration & Automation license
+      description: Orchestration & Automation license (leave blank if none)
+      sensitive: true
+      allowBlank: true
     - name: gitops-cp4s_roks_auth
       description: >-
         Whether ROKS (RedHat OpenShift on IBM Cloud) authentication need to be

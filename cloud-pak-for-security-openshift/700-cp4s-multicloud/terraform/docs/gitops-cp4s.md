@@ -72,7 +72,7 @@ module "gitops-cp4s" {
 | backup_storage_size | The storage size for the backup and restore PVC. Must be 500Gi or higher. If not specified, by default 500Gi is reserved. | true |  |  |
 | backup_storage_class | Storage class for the backup and restore pod. If this value is not set, Cloud Pak for Security takes the value from the storageClass parameter. | true |  |  |
 | domain | The fully qualified domain name (FQDN) created for Cloud Pak for Security. If you don't specify an FQDN, it is generated as cp4s.<cluster_ingress_subdomain>. | true |  |  |
-| orchestration_automation_license | Orchestration & Automation license. | true |  |  |
+| orchestration_automation_license | Orchestration & Automation license (leave blank if none) |  |  |  |
 
 ### Outputs
 

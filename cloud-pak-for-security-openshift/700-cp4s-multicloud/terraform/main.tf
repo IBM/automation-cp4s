@@ -42,7 +42,7 @@ module "gitops-cp-catalogs" {
   server_name = module.gitops_repo.server_name
 }
 module "gitops-cp4s" {
-  source = "github.com/cloud-native-toolkit/terraform-gitops-cp4s?ref=v1.1.4"
+  source = "github.com/cloud-native-toolkit/terraform-gitops-cp4s?ref=v1.1.5"
 
   admin_user = var.gitops-cp4s_admin_user
   backup_storage_class = var.rwo_storage_class

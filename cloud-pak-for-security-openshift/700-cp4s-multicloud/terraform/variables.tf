@@ -113,7 +113,7 @@ variable "gitops-cp4s_domain" {
 }
 variable "gitops-cp4s_orchestration_automation_license" {
   type = string
-  description = "Orchestration & Automation license."
+  description = "Orchestration & Automation license. (leave blank to skip)"
   default = ""
 }
 variable "gitops-knative-serving_replica_count" {

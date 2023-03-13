@@ -36,8 +36,9 @@ function process_variable () {
   local name="$1"
   local default_value="$2"
   local sensitive="$3"
-  local description="$4"
-  local prompt_all="$5"
+  local allowBlank="$4"
+  local description="$5"
+  local prompt_all="$6"
 
   local variable_name="TF_VAR_${name}"
 
@@ -64,7 +65,10 @@ function process_variable () {
     value="${default_value}"
   fi
 
-  while [[ "${value}" == "null" ]]; do
+  count=0
+
+  while ( [[ "${value}" == "null" ]] && [[ "$allowBlank" != "true" ]] ) || ( [[ "$count" -eq "0" ]] && [[ "$allowBlank" == "true" ]] ); do
+
     echo "Provide a value for '${name}':"
     if [[ -n "${description}" ]]; then
       echo "  ${description}"
@@ -79,9 +83,15 @@ function process_variable () {
     fi
     read -u 1 ${sensitive_flag} -p "> ${default_prompt}" value
     value=${value:-$default_value}
+
+    count=$((count+1))
   done
 
   output_value=$(echo "${value}" | sed 's/"/\\"/g')
+
+  if [[ "${output_value}" == "null" ]]; then
+    output_value=""
+  fi
 
   if [[ "${sensitive}" != "true" ]]; then
     echo "${name} = \"${output_value}\"" >> "${TERRAFORM_TFVARS}"
@@ -122,8 +132,9 @@ if [[ ! -f "${TERRAFORM_TFVARS}" ]] && [[ ! -f "${CREDENTIALS_TFVARS}" ]]; then
     default_value=$(echo "${variable}" | ${YQ} e -o json '.value' - | jq -c -r '.')
     sensitive=$(echo "${variable}" | ${YQ} e '.sensitive // false' -)
     description=$(echo "${variable}" | ${YQ} e '.description // ""' -)
+    allowBlank=$(echo "${variable}" | ${YQ} e '.allowBlank // false' -)
 
-    process_variable "${name}" "${default_value}" "${sensitive}" "${description}" "${PROMPT_ALL}"
+    process_variable "${name}" "${default_value}" "${sensitive}" "${allowBlank}" "${description}" "${PROMPT_ALL}"
   done
 
   if [[ -f "${VARIABLES_FILE}" ]]; then
@@ -136,7 +147,7 @@ if [[ ! -f "${TERRAFORM_TFVARS}" ]] && [[ ! -f "${CREDENTIALS_TFVARS}" ]]; then
       bom_var=$(cat bom.yaml | ${YQ} e '.spec.variables[]' -o json - | jq --arg NAME "${name}" -c 'select(.name == $NAME)')
 
       if [[ -z "${bom_var}" ]]; then
-        process_variable "${name}" "${value}" "${sensitive}" "" "${PROMPT_ALL}"
+        process_variable "${name}" "${value}" "${sensitive}" "${allowBlank}" "" "${PROMPT_ALL}"
       fi
     done
   fi
